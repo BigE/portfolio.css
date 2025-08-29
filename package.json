@@ -1,0 +1,26 @@
+{
+  "name": "portfolio.css",
+  "description": "Stylesheets for my portfolio site",
+  "version": "0.0.1-dev",
+  "license": "MIT",
+  "author": {
+    "name": "Eric Gach",
+    "email": "eric.gach@gmail.com",
+    "url": "https://ericgach.me"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BigE/portfolio.css.git"
+  },
+  "packageManager": "yarn@4.9.1",
+  "dependencies": {
+    "purecss": "^3.0.0"
+  },
+  "devDependencies": {
+    "sass": "^1.91.0"
+  },
+  "scripts": {
+    "build": "sass --style=compressed scss:css",
+    "watch": "sass --watch scss:css"
+  }
+}

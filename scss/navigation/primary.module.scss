@@ -1,0 +1,13 @@
+@use "../variables";
+
+.nav {
+  .link, .link:focus {
+    background-color: variables.$brand_color;
+    color: variables.$light_shade;
+  }
+
+  .link:hover, .active .link {
+    background-color: variables.$light_shade;
+    color: variables.$brand_color;
+  }
+}

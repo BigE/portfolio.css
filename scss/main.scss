@@ -1,0 +1,15 @@
+/**
+ * Main style sheet that should only be included to pull styles of all
+ * components into a single style sheet. All components should be available
+ * individually as well.
+ */
+
+// Global layout
+@use "layout.module";
+
+// Navigation
+@use "navigation/primary.module";
+
+// Components
+@use "components/button.module";
+@use "components/icon.module";

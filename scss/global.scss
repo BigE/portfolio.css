@@ -1,0 +1,65 @@
+/**
+ * This is the global style sheet that should be included on every page of the
+ * site. It sets basic standards for elements and global styles that can be
+ * used anywhere in the site.
+ */
+
+body,html {
+    overflow-x: hidden;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.6rem;
+    font-style: normal;
+    line-height: 1.5;
+    @media (min-width: 1024px) {
+        font-size: 2rem;
+    }
+}
+
+html {
+    font-size: 10px;
+    scroll-behavior: smooth;
+}
+
+.clear {
+	clear: both;
+}
+
+.error-list {
+    margin: 0 0 0 11em;
+}
+
+// Added because font-awesome sets a width that we don't always want
+.fa-solid, .fa-regular, .fa-brands, .fa-classic, .fas, .far, .fab, .fa {
+    width: var(--fa-width, 1em);
+}
+
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+.profile-success {
+    padding: 0 0 1.8rem 0;
+}
+
+.svg-inline--fa {
+    box-sizing: initial;
+    display: initial;
+    height: 1em;
+    vertical-align: initial;
+    width: 1em;
+}
+
+.text-centered {
+    text-align: center !important;
+}
+
+.text-right {
+    text-align: right;
+}

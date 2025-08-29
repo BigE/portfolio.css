@@ -1,0 +1,11 @@
+@use "../variables";
+
+.button {
+  background-color: variables.$light_shade;
+
+  & svg {
+    padding: 0 0.3em 0 0;
+    position: relative;
+    top: 0.1em;
+  }
+}
