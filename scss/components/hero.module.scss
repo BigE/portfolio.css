@@ -12,12 +12,21 @@
   width: 100vw;
 
   .content {
+    font-size: 1.2em;
     padding: 3rem;
     position: relative;
     z-index: 1;
 
     .button > .icon {
       color: variables.$brand_color;
+    }
+
+    .headline {
+      font-size: 1.6em;
+    }
+
+    @media (min-width: variables.$breakpoint_medium) {
+      font-size: 1.4em;
     }
   }
 

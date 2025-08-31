@@ -14,6 +14,12 @@
 
 .primary {
   display: none;
+
+  @media (min-width: variables.$breakpoint_large) {
+    display: block;
+    font-size: 0.9em;
+    margin-left: auto;
+  }
 }
 
 .body.header-visible .primary {

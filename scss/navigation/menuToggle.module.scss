@@ -1,7 +1,13 @@
+@use "../variables";
+
 .toggle.menu-toggle {
   box-shadow: none;
   position: fixed;
   right: 0.5rem;
   top: 4.2rem;
   z-index: 1001;
+
+  @media (min-width: variables.$breakpoint_large) {
+    display: none;
+  }
 }

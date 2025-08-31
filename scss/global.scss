@@ -4,15 +4,17 @@
  * used anywhere in the site.
  */
 
-body,html {
-    overflow-x: hidden;
-}
+@use "variables";
 
 body {
     font-family: "Open Sans", sans-serif;
     font-size: 1.6rem;
     font-style: normal;
     line-height: 1.5;
+
+    @media (min-width: variables.$breakpoint_extra_large) {
+      font-size: 2rem;
+    }
 }
 
 html {
@@ -22,6 +24,13 @@ html {
 
 .clear {
 	clear: both;
+}
+
+.center-on-md {
+  @media (min-width: variables.$breakpoint_medium) {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 .error-list {

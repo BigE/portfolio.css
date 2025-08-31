@@ -5,8 +5,12 @@
   border-radius: 2rem;
   box-shadow: 0 0.1rem 0.1rem 0.1rem rgba(variables.$light_shade, 0.6);
   color: variables.$dark_shade;
-  margin: 1rem 0;
+  margin: 2rem 0;
   padding: 0.5rem 2rem 2rem;
+
+  @media (min-width: variables.$breakpoint_small) {
+    margin: 2rem;
+  }
 
   &.dark {
     background-color: variables.$dark_shade;
