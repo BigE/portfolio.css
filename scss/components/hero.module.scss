@@ -1,0 +1,33 @@
+@use "../variables";
+
+.hero {
+  background-color: rgba(variables.$dark_shade, 0.65);
+  box-shadow: 0 1rem 1rem 1rem rgba(variables.$dark_shade, 0.4);
+  display: table-cell;
+  height: 75vh;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  vertical-align: middle;
+  width: 100vw;
+
+  .content {
+    padding: 3rem;
+    position: relative;
+    z-index: 1;
+
+    .button > .icon {
+      color: variables.$brand_color;
+    }
+  }
+
+  .background {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    object-fit: cover;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+  }
+}

@@ -11,3 +11,11 @@
     color: variables.$brand_color;
   }
 }
+
+.primary {
+  display: none;
+}
+
+.body.header-visible .primary {
+  display: block;
+}

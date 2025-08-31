@@ -1,0 +1,14 @@
+.social {
+    ul {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.social .link {
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    border-radius: 1rem;
+    line-height: 1;
+    padding: 1rem;
+}
