@@ -1,6 +1,6 @@
 @use "variables";
 
-.body {
+body {
   background-color: variables.$default_background;
   color: variables.$default_color;
 }
@@ -10,7 +10,7 @@
     background-color: variables.$brand_color;
     color: variables.$default_color;
     display: flex;
-    height: 7rem;
+    height: 8rem;
     left: 0;
     position: fixed;
     right: 0;
@@ -30,7 +30,7 @@
           box-shadow: 0 0 1rem -0.2rem variables.$default_background;
           box-sizing: border-box;
           display: block;
-          height: 5rem;
+          height: 6.4rem;
           width: auto;
         }
       }
@@ -40,17 +40,21 @@
         flex-direction: column;
 
         .headline {
-          font-size: 2rem;
-          line-height: 2.4rem;
+          font-size: 2.2rem;
+          line-height: 2.6rem;
           margin: 0;
         }
 
         .sub-headline {
-          font-size: 1.4rem;
-          line-height: 1.5rem;
+          font-size: 1.5rem;
+          line-height: 1.7rem;
           margin: 0.6rem 0 0 0;
         }
       }
+    }
+
+    & > :last-child {
+      margin-left: auto;
     }
   }
 
@@ -78,10 +82,14 @@
     }
   }
 
-  .body.header-visible {
+  .header-visible {
     #header {
       flex-direction: column;
       height: 100vh;
+
+      & > :last-child {
+        margin-left: revert;
+      }
     }
   }
 }
