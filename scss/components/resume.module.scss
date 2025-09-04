@@ -1,0 +1,50 @@
+@use "../variables";
+
+.resume {
+  background-color: variables.$light_shade;
+  color: variables.$dark_shade;
+  padding: 2em;
+
+  p {
+    margin: 0;
+  }
+
+  > .header {
+    border-bottom: 0.1rem solid black;
+
+    .left {
+      float: left;
+    }
+
+    .right {
+      float: right;
+    }
+  }
+
+  .section {
+    box-shadow: none;
+
+    @media print {
+      break-inside: avoid;
+    }
+
+    > .header, &.skills > h2 {
+      border-bottom: 0.1rem solid black;
+      border-top: 0.1rem solid black;
+    }
+
+    .content {
+      margin: 1em;
+    }
+  }
+
+  .skills {
+    h3 {
+      margin: 0 1em;
+
+      & + p {
+        margin: 0 2em;
+      }
+    }
+  }
+}
