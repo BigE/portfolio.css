@@ -31,7 +31,7 @@
     }
   }
 
-  &:not(.dark):not(.accent) {
+  &:not(.dark):not(.accent):not(.brand) {
     .headline > .icon {
       color: variables.$dark_accent;
     }
@@ -57,6 +57,20 @@
 
     .footer .button .icon {
       color: variables.$brand_color;
+    }
+  }
+
+  &.brand {
+    background-color: variables.$brand_color;
+    box-shadow: 0 0.1rem 0.1rem 0.1rem rgba(variables.$brand_color, 0.6);
+    color: variables.$light_shade;
+
+    .headline > .icon {
+      color: variables.$light_shade;
+    }
+
+    .footer .button .icon {
+      color: variables.$dark_accent;
     }
   }
 
