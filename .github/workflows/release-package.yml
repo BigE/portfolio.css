@@ -7,14 +7,17 @@ on:
 jobs:
   publish-github-registry:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-node@v5
         with:
           node-version: 22
           registry-url: https://npm.pkg.github.com/
-      - run: corepack enable
-      - run: yarn install
+          cache: 'yarn'
+      - run: yarn install --immutable
       - run: yarn build
       - run: yarn publish
         env:
