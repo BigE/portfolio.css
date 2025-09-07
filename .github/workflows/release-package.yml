@@ -16,9 +16,15 @@ jobs:
         run: corepack enable
       - uses: actions/setup-node@v5
         with:
-          node-version: 22
-          registry-url: https://npm.pkg.github.com/
+          node-version: '22.x'
+          registry-url: 'https://npm.pkg.github.com/'
           cache: 'yarn'
+          scope: '@BigE'
+      - name: Configure Yarn Authentication
+        run: |
+          echo "npmRegistries:" >> ./.yarnrc.yml
+          echo "  '//npm.pkg.github.com':" >> ./.yarnrc.yml
+          echo "    npmAuthToken: ${{ secrets.GITHUB_TOKEN }}" >> ./.yarnrc.yml
       - name: Install dependencies
         run: yarn install --immutable
       - name: Build project
