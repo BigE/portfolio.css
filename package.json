@@ -1,5 +1,8 @@
 {
-  "name": "portfolio.css",
+  "name": "@BigE/portfolio.css",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "description": "Stylesheets for my portfolio site",
   "version": "0.0.1-dev",
   "license": "MIT",
@@ -12,6 +15,10 @@
     "type": "git",
     "url": "git+https://github.com/BigE/portfolio.css.git"
   },
+  "bugs": {
+    "url": "https://github.com/BigE/portfolio.css/issues"
+  },
+  "homepage": "https://github.com/BigE/portfolio.css#readme",
   "packageManager": "yarn@4.9.1",
   "dependencies": {
     "purecss": "^3.0.0"
