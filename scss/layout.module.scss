@@ -1,0 +1,105 @@
+@use "variables";
+
+body {
+  background-color: variables.$default_background;
+  color: variables.$default_color;
+}
+
+@media screen {
+  #header {
+    background-color: variables.$brand_color;
+    color: variables.$default_color;
+    display: flex;
+    height: 8rem;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 1000;
+
+    @media (min-width: variables.$breakpoint_large) {
+      align-items: end;
+    }
+
+    .logo {
+      color: variables.$default_color;
+      display: flex;
+      gap: 1rem;
+      padding: 0.8rem 1.6rem;
+
+      .image {
+        .avatar {
+          -webkit-border-radius: 50%;
+          -moz-border-radius: 50%;
+          border-radius: 50%;
+          box-shadow: 0 0 1rem -0.2rem variables.$default_background;
+          box-sizing: border-box;
+          display: block;
+          height: 6.4rem;
+          width: auto;
+        }
+      }
+
+      .title {
+        display: flex;
+        flex-direction: column;
+
+        .headline {
+          font-size: 2.2rem;
+          line-height: 2.6rem;
+          margin: 0;
+        }
+
+        .sub-headline {
+          font-size: 1.5rem;
+          line-height: 1.7rem;
+          margin: 0.6rem 0 0 0;
+        }
+      }
+    }
+  }
+
+  #footer {
+    font-size: 1.1em;
+    padding: 8rem 1rem;
+
+    a:not(.button) {
+      color: inherit;
+    }
+
+    .content {
+      display: flex;
+      justify-content: center;
+      text-align: center;
+
+      @media (max-width: variables.$breakpoint_large) {
+        flex-direction: column;
+
+        & > .icon {
+          display: none;
+        }
+      }
+
+      > * {
+        padding: 1rem;
+      }
+    }
+  }
+
+  .header-visible {
+    overflow-y: hidden;
+
+    #header {
+      flex-direction: column;
+      height: 100vh;
+
+      & > :last-child {
+        margin-left: revert;
+      }
+    }
+  }
+
+  #content {
+    margin-top: 8rem;
+  }
+}

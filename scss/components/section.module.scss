@@ -1,0 +1,39 @@
+@use "../variables";
+
+.section {
+  background-color: variables.$light_shade;
+  box-shadow:
+    0 1rem 1rem rgba(variables.$dark_shade, 0.4) inset, // above
+    0 -1rem 1rem rgba(variables.$dark_shade, 0.4) inset; // below
+  color: variables.$dark_shade;
+  padding: 4rem 3rem;
+  scroll-margin-top: 8rem;
+
+  @media (min-width: variables.$breakpoint_medium) {
+    padding: 4rem 5em;
+  }
+
+  @media (min-width: variables.$breakpoint_extra_large) {
+    padding: 4rem 15%;
+  }
+
+  &.dark {
+    background-color: variables.$dark_shade;
+    box-shadow: none;
+    color: variables.$light_shade;
+
+    .headline > .icon {
+      color: variables.$light_accent;
+    }
+  }
+
+  .content a:not(.button) {
+    color: inherit;
+  }
+
+  .headline > .icon {
+    color: variables.$dark_accent;
+    font-size: 2rem;
+    margin-right: 0.5rem;
+  }
+}

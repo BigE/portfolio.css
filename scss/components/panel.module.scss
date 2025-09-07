@@ -1,0 +1,97 @@
+@use "../variables";
+
+.panel, .section .panel {
+  background-color: variables.$light_shade;
+  border-radius: 2rem;
+  box-shadow: 0 0.1rem 0.1rem 0.1rem rgba(variables.$light_shade, 0.6);
+  color: variables.$dark_shade;
+  margin: 2rem 0;
+  padding: 0.5rem 2rem 2rem;
+
+  @media (min-width: variables.$breakpoint_small) {
+    margin: 2rem;
+  }
+
+  &.dark {
+    background-color: variables.$dark_shade;
+    box-shadow: 0 0.1rem 0.1rem 0.1rem rgba(variables.$dark_shade, 0.6);
+    color: variables.$light_shade;
+
+    &.accent {
+      background-color: variables.$dark_accent;
+
+      .headline > .icon {
+        color: variables.$light_shade;
+      }
+    }
+
+    .legend {
+      border-color: variables.$light_accent;
+      color: variables.$light_shade;
+    }
+  }
+
+  &:not(.dark):not(.accent):not(.brand) {
+    .headline > .icon {
+      color: variables.$dark_accent;
+    }
+
+    .footer .button {
+      background-color: variables.$dark_shade;
+      color: variables.$light_shade;
+      box-shadow: 0 0.1rem 0.1rem 0.1rem rgba(variables.$dark_shade, 0.4);
+
+      .icon {
+        color: variables.$light_accent;
+      }
+    }
+  }
+
+  &.accent {
+    background-color: variables.$light_accent;
+    box-shadow: 0 0.1rem 0.1rem 0.1rem rgba(variables.$light_accent, 0.6);
+
+    .headline > .icon {
+      color: variables.$dark_shade;
+    }
+
+    .footer .button .icon {
+      color: variables.$brand_color;
+    }
+  }
+
+  &.brand {
+    background-color: variables.$brand_color;
+    box-shadow: 0 0.1rem 0.1rem 0.1rem rgba(variables.$brand_color, 0.6);
+    color: variables.$light_shade;
+
+    .headline > .icon {
+      color: variables.$light_shade;
+    }
+
+    .footer .button .icon {
+      color: variables.$dark_accent;
+    }
+  }
+
+  .footer {
+    display: flex;
+    justify-content: end;
+
+    &.centered {
+      justify-content: center;
+    }
+
+    .button {
+      border-radius: 1rem;
+      margin: 0 0.5rem;
+    }
+  }
+
+  .legend {
+    border-color: variables.$dark_accent;
+    color: variables.$dark_shade;
+    padding: 0;
+    margin: 0;
+  }
+}

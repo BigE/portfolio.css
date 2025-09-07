@@ -1,0 +1,27 @@
+@use "../variables";
+
+.nav {
+  .link, .link:focus {
+    background-color: variables.$brand_color;
+    color: variables.$light_shade;
+  }
+
+  .link:hover, .active .link {
+    background-color: variables.$light_shade;
+    color: variables.$brand_color;
+  }
+}
+
+.primary {
+  display: none;
+
+  @media (min-width: variables.$breakpoint_large) {
+    display: block;
+    font-size: 0.9em;
+    margin-left: auto;
+  }
+}
+
+.body.header-visible .primary {
+  display: block;
+}

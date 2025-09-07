@@ -1,0 +1,27 @@
+// Color inspiration from http://colormind.io/bootstrap/
+
+// main color
+$brand_color: #F05F36;
+
+// background colors
+$dark_accent: #B58178;
+$dark_shade: #30293C;
+$light_shade: #F7F8F6;
+$light_accent: #DCA1A6;
+$default_background: $dark_shade;
+
+// foreground colors
+$default_color: $light_shade; // default to light shade, dark shade should be our default background
+$error_color: #F44336;
+$info_color: #18151D;
+$success_color: #7D9748;
+$warning_color: #FB8710;
+
+// breakpoints: min-width
+$breakpoint_small: 576px;
+$breakpoint_medium: 768px;
+$breakpoint_large: 992px;
+$breakpoint_extra_large: 1200px;
+
+// defined for use later
+$headings: h1 h2 h3 h4 h5 h6;

@@ -1,0 +1,12 @@
+@use "../variables";
+
+.button {
+  background-color: variables.$light_shade;
+  color: variables.$dark_shade;
+  box-shadow: 0 0.1rem 0.1rem 0.1rem rgba(variables.$light_shade, 0.4);
+
+  & > .icon {
+    color: variables.$dark_accent;
+    margin-right: 0.5rem;
+  }
+}
