@@ -1,6 +1,11 @@
 @use "../variables";
 
 .navigation {
+  & > .list {
+    align-items: center;
+    display: flex;
+  }
+
   .link, .link:focus {
     background-color: variables.$brand_color;
     color: variables.$light_shade;
