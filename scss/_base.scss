@@ -2,6 +2,7 @@
 @use "layout.module";
 
 // Navigation
+@use "navigation/navigation.module";
 @use "navigation/primary.module";
 @use "navigation/social.module";
 @use "navigation/toggle.module";
