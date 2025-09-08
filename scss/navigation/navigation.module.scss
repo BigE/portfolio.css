@@ -2,8 +2,15 @@
 
 .navigation {
   & > .list {
-    align-items: center;
-    display: flex;
+    font-size: 0;
+  }
+
+  .item {
+    font-size: 1.6rem;
+
+    @media (min-width: variables.$breakpoint_extra_large) {
+      font-size: 2rem;
+    }
   }
 
   .link, .link:focus {
