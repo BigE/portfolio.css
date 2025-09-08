@@ -16,4 +16,11 @@
       }
     }
   }
+
+  .legend {
+    border-color: variables.$dark_accent;
+    color: variables.$dark_shade;
+    padding: 0;
+    margin: 0;
+  }
 }
