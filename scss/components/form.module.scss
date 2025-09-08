@@ -17,7 +17,7 @@
     }
   }
 
-  .dark {
+  &.dark {
     .legend {
       border-color: variables.$light_accent;
       color: variables.$light_shade;
