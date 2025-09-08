@@ -24,11 +24,6 @@
         color: variables.$light_shade;
       }
     }
-
-    .legend {
-      border-color: variables.$light_accent;
-      color: variables.$light_shade;
-    }
   }
 
   &:not(.dark):not(.accent):not(.brand) {

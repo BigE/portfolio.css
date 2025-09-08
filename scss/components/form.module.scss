@@ -1,19 +1,26 @@
 @use "../variables";
 
 .form {
-  & input, textarea {
-    width: 100%;
-  }
-
-  textarea {
-    height: 20rem;
-  }
-
   .container {
+    & .input, .textarea {
+      width: 100%;
+    }
+
+    .textarea {
+      height: 20rem;
+    }
+
     @media (min-width: 480.1px) {
-      input, textarea {
+      .input, .textarea {
         width: calc(100% - 12em);
       }
+    }
+  }
+
+  .dark {
+    .legend {
+      border-color: variables.$light_accent;
+      color: variables.$light_shade;
     }
   }
 
