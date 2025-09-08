@@ -93,11 +93,11 @@
       flex-direction: column;
       height: 100vh;
 
-      #menu {
-        display: revert;
+      .primary {
+        display: block;
       }
 
-      & > :last-child {
+      .social {
         margin-left: revert;
       }
     }
