@@ -36,7 +36,7 @@
       break-inside: avoid;
     }
 
-    > .header, &.skills > h2 {
+    > .header, &.skills > .richtext h2 {
       border-bottom: 0.1rem solid black;
       border-top: 0.1rem solid black;
     }
