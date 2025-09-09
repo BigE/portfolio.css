@@ -5,6 +5,10 @@
   color: variables.$dark_shade;
   padding: 2em;
 
+  .link.richtext {
+    color: revert;
+  }
+
   p {
     margin: 0;
   }
