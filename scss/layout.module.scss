@@ -1,4 +1,5 @@
 @use "variables";
+@use "mixins/link";
 
 #body {
   background-color: variables.$default_background;
@@ -78,6 +79,10 @@
         & > .icon {
           display: none;
         }
+      }
+
+      .link {
+        @include link.icon;
       }
 
       > * {
