@@ -1,7 +1,9 @@
-.link.richtext {
-  color: inherit;
+.richtext {
+  .link {
+    color: inherit;
 
-  .icon {
-    margin-left: 0.2em;
+    .icon {
+      margin-left: 0.2em;
+    }
   }
 }
