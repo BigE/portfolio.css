@@ -1,0 +1,9 @@
+@use "../variables";
+
+@mixin font-size($normal: 1.6rem, $extra_large: 2rem) {
+  font-size: $normal;
+
+  @media (min-width: variables.$breakpoint_extra_large) {
+    font-size: $extra_large;
+  }
+}

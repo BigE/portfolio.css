@@ -5,16 +5,14 @@
  */
 
 @use "variables";
+@use "mixins/font";
 
 body {
     font-family: "Open Sans", sans-serif;
-    font-size: 1.6rem;
     font-style: normal;
     line-height: 1.5;
 
-    @media (min-width: variables.$breakpoint_extra_large) {
-      font-size: 2rem;
-    }
+    @include font.font-size;
 }
 
 html {
