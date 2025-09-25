@@ -4,7 +4,7 @@
     "registry": "https://npm.pkg.github.com"
   },
   "description": "Stylesheets for my portfolio site",
-  "version": "0.0.33",
+  "version": "0.0.34",
   "license": "MIT",
   "author": {
     "name": "Eric Gach",
