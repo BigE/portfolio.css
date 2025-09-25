@@ -16,7 +16,6 @@ body {
 }
 
 html {
-    font-size: 10px;
     scroll-behavior: smooth;
 }
 
@@ -25,14 +24,10 @@ html {
 }
 
 .center-on-md {
-  @media (min-width: variables.$breakpoint_medium) {
+  @media (min-width: variables.$breakpoint_md) {
     margin-left: auto;
     margin-right: auto;
   }
-}
-
-.error-list {
-    margin: 0 0 0 11em;
 }
 
 // Added because font-awesome sets a width that we don't always want
@@ -46,10 +41,6 @@ html {
 
 .float-right {
     float: right;
-}
-
-.profile-success {
-    padding: 0 0 1.8rem 0;
 }
 
 .svg-inline--fa {

@@ -7,7 +7,7 @@
   }
 
   .item {
-    @include font.font-size;
+    font-size: 1.2rem;
   }
 
   .link, .link:focus {

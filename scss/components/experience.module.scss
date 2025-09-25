@@ -1,10 +1,23 @@
 .experience {
-  margin: 1em;
+  margin: 2em 0;
 
   .header {
+    display: flex;
+    flex-wrap: wrap;
+
     .company,.employment,.location,.position {
+      flex-basis: 50%;
+      flex-grow: 1;
       font-size: 1em;
       margin: 0;
+    }
+
+    .company,.location {
+      text-align: left;
+    }
+
+    .employment,.position {
+      text-align: right;
     }
 
     .company {
