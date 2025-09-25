@@ -34,6 +34,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
     }
   });
 
+  document.getElementById('menu').querySelectorAll('.item .link').forEach(item => {
+    item.addEventListener('click', closeMenu);
+  });
+
   window.addEventListener('scroll', function () {
     if (clicked) return;
 
