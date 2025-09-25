@@ -2,30 +2,38 @@
 
 .hero {
   background-color: rgba(variables.$dark_shade, 0.65);
-  box-shadow: 0 1rem 1rem 1rem rgba(variables.$dark_shade, 0.4);
-  display: table-cell;
+  box-shadow: 0 0.6em 0.6em 0.6em rgba(variables.$dark_shade, 0.4);
   height: 75vh;
   overflow: hidden;
   position: relative;
   text-align: center;
-  vertical-align: middle;
   width: 100vw;
 
   .content {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
     font-size: 1.2em;
-    padding: 3rem;
+    height: calc(100% - variables.$header_height);
+    justify-content: center;
+    margin: 3em;
     position: relative;
     z-index: 1;
 
-    .button > .icon {
-      color: variables.$brand_color;
+    .button {
+      margin: 1.2em 0;
+
+      & > .icon {
+        color: variables.$brand_color;
+      }
     }
 
     .headline {
-      font-size: 1.6em;
+      font-size: 2.2em;
+      margin: 0.5em 0;
     }
 
-    @media (min-width: variables.$breakpoint_medium) {
+    @media (min-width: variables.$breakpoint_md) {
       font-size: 1.4em;
     }
   }

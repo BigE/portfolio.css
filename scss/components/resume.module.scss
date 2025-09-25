@@ -1,3 +1,4 @@
+@use "../mixins/link";
 @use "../variables";
 
 .resume {
@@ -5,8 +6,10 @@
   color: variables.$dark_shade;
   padding: 2em;
 
-  .richtext a {
-    color: revert;
+  a, a:visited {
+    color: blue;
+
+    @include link.icon;
   }
 
   p {
@@ -14,18 +17,30 @@
   }
 
   > .header {
-    border-bottom: 0.1rem solid black;
+    border-bottom: 0.06em solid black;
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 1em;
+
+    > * {
+      flex-basis: 50%;
+      flex-grow: 1;
+      > * {
+        white-space: nowrap;
+      }
+    }
 
     .title {
+      flex-basis: 100%;
       text-align: center;
     }
 
     .left {
-      float: left;
+      text-align: left;
     }
 
     .right {
-      float: right;
+      text-align: right;
     }
   }
 
@@ -37,8 +52,8 @@
     }
 
     > .header, &.skills > .richtext h2 {
-      border-bottom: 0.1rem solid black;
-      border-top: 0.1rem solid black;
+      border-bottom: 0.06em solid black;
+      border-top: 0.06em solid black;
     }
 
     .content {

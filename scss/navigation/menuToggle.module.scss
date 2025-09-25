@@ -3,11 +3,11 @@
 .toggle.menu-toggle {
   box-shadow: none;
   position: fixed;
-  right: 0.5rem;
-  top: 4.2rem;
+  right: 0.2em;
+  top: 2.8em;
   z-index: 1001;
 
-  @media (min-width: variables.$breakpoint_large) {
+  @media (min-width: variables.$breakpoint_lg) {
     display: none;
   }
 }

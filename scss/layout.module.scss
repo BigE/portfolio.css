@@ -1,4 +1,5 @@
 @use "variables";
+@use "mixins/link";
 
 #body {
   background-color: variables.$default_background;
@@ -10,14 +11,14 @@
     background-color: variables.$brand_color;
     color: variables.$default_color;
     display: flex;
-    height: 8rem;
+    height: variables.$header_height;
     left: 0;
     position: fixed;
     right: 0;
     top: 0;
     z-index: 1000;
 
-    @media (min-width: variables.$breakpoint_large) {
+    @media (min-width: variables.$breakpoint_lg) {
       align-items: end;
     }
 
@@ -32,10 +33,10 @@
           -webkit-border-radius: 50%;
           -moz-border-radius: 50%;
           border-radius: 50%;
-          box-shadow: 0 0 1rem -0.2rem variables.$default_background;
+          box-shadow: 0 0 0.6em -0.2em variables.$default_background;
           box-sizing: border-box;
           display: block;
-          height: 6.4rem;
+          height: calc(0.7 * variables.$header_height);
           width: auto;
         }
       }
@@ -45,15 +46,13 @@
         flex-direction: column;
 
         .headline {
-          font-size: 2.2rem;
-          line-height: 2.6rem;
           margin: 0;
+          overflow: initial;
         }
 
         .sub-headline {
-          font-size: 1.5rem;
-          line-height: 1.7rem;
-          margin: 0.6rem 0 0 0;
+          margin: 0;
+          overflow: initial;
         }
       }
     }
@@ -70,14 +69,19 @@
     .content {
       display: flex;
       justify-content: center;
+      overflow: initial;
       text-align: center;
 
-      @media (max-width: variables.$breakpoint_large) {
+      @media (max-width: variables.$breakpoint_lg) {
         flex-direction: column;
 
         & > .icon {
           display: none;
         }
+      }
+
+      .link {
+        @include link.icon;
       }
 
       > * {
@@ -104,6 +108,6 @@
   }
 
   #content {
-    margin-top: 8rem;
+    margin-top: variables.$header_height;
   }
 }

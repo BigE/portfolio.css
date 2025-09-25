@@ -1,4 +1,5 @@
 @use "../variables";
+@use "../mixins/font";
 
 .navigation {
   & > .list {
@@ -6,11 +7,7 @@
   }
 
   .item {
-    font-size: 1.6rem;
-
-    @media (min-width: variables.$breakpoint_extra_large) {
-      font-size: 2rem;
-    }
+    font-size: 1.2rem;
   }
 
   .link, .link:focus {

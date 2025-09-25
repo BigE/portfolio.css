@@ -4,11 +4,12 @@
   background-color: variables.$brand_color;
   border: 0.1rem solid variables.$dark_accent;
   border: 0;
-  border-radius: 0.5rem;
-  box-shadow: 0 0.1rem 0.1rem 0.1rem rgba(variables.$brand_color, 0.4);
+  border-radius: 0.5em;
+  box-shadow: 0 0.06em 0.06em 0.06rem rgba(variables.$brand_color, 0.4);
   color: variables.$light_shade;
+  cursor: pointer;
   display: inline-block;
-  font-size: 2rem;
+  font-size: 1.2em;
   line-height: 1;
   padding: 0.7rem 0.7rem 0.4rem 0.7rem;
   text-align: center;

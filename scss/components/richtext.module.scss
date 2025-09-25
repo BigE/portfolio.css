@@ -1,9 +1,9 @@
+@use "../mixins/link";
+
 .richtext {
   .link {
     color: inherit;
 
-    .icon {
-      margin-left: 0.2em;
-    }
+    @include link.icon;
   }
 }

@@ -3,12 +3,14 @@
 .primary {
   display: none;
 
-  @media (min-width: variables.$breakpoint_large) {
+  @media (min-width: variables.$breakpoint_lg) {
     display: block;
     margin-left: auto;
+  }
 
+  @media (min-width: variables.$breakpoint_xl) {
     .item {
-      font-size: 1.8rem;
+      font-size: 1.5rem;
     }
   }
 
