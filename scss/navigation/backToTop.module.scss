@@ -1,3 +1,5 @@
+@use "../variables";
+
 .toggle.backToTop {
   bottom: 0.5em;
   display: none;
@@ -10,5 +12,9 @@
 
   .icon {
     position: initial;
+
+    @media (min-width: variables.$breakpoint_xl) {
+      position: relative;
+    }
   }
 }
