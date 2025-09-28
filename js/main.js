@@ -1,35 +1,64 @@
-document.addEventListener("DOMContentLoaded", function (event) {
+/**
+ * Attach the menu toggle to an element
+ *
+ * @param {string} className Class to pass into the toggleMenu function
+ * @param {string} menuToggleId Menu toggle element ID
+ */
+export function attachMenuToggle(className, menuToggleId) {
+  document.getElementById(menuToggleId).addEventListener('click', (event) => {
+    event.preventDefault();
+    toggleMenu(className);
+  });
+}
+
+/**
+ * Clear any active className from the menu_items
+ *
+ * @param {HTMLLIElement[]} menu_items
+ * @param {string} className
+ */
+export function clearActive(menu_items, className='active') {
+  menu_items.forEach((element) => {
+    element.classList.remove('pure-menu-active', className)
+  });
+}
+
+/**
+ * Close the menu by toggling the className
+ *
+ * @param {string} className
+ */
+export function closeMenu(className) {
+  if (document.body.classList.contains(className)) {
+    toggleMenu(className);
+  }
+}
+
+/**
+ * Toggle the visibility of the menu
+ *
+ * @param {string} className Class to toggle on the body
+ * @param {string} menuId Menu identifier to toggle pure-menu-horizontal
+ */
+export function toggleMenu(className, menuId) {
+  document.body.classList.toggle(className);
+  document.getElementById(menuId).querySelector("ul").classList.toggle("pure-menu-horizontal");
+}
+
+export function bindElements(event) {
   var body = document.body,
-      menu_ul = document.getElementById('menu').querySelector('ul'),
       menu_items = document.body.querySelectorAll('#menu .pure-menu-item'),
       clicked = false,
       WINDOW_CHANGE_EVENT = ('onorientationchange' in window) ? 'orientationchange':'resize';
 
-  function clearActive() {
-    menu_items.forEach(function (element, i, a) {
-        element.classList.remove('pure-menu-active', 'active');
-    });
-  }
-
-  function closeMenu() {
-    if (body.classList.contains('header-visible')) {
-        toggleMenu();
-    }
-  }
-
-  function toggleMenu() {
-    body.classList.toggle('header-visible');
-    menu_ul.classList.toggle('pure-menu-horizontal');
-  }
-
   document.getElementById('menuToggle').addEventListener('click', function (event) {
-    toggleMenu();
+    toggleMenu('header-visible', 'menu');
     event.preventDefault();
   });
 
   document.getElementById('content').addEventListener('click', function (event) {
     if (body.classList.contains('header-visible')) {
-      toggleMenu();
+      toggleMenu('header-visible', 'menu');
       event.preventDefault();
     }
   });
@@ -50,9 +79,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
     else
       document.getElementById('backToTop').classList.remove('visible');
 
-    clearActive();
+    clearActive(menu_items);
     for (var i = 0; i < elements.length; i++) {
-      if (top >= (elements[i].offsetTop - 200) && elem.scrollTop > 0) {
+      if (top >= (elements[i].offsetTop - (window.innerHeight * 0.50)) && elem.scrollTop > 0) {
         menu_items.forEach(function (item, x, aa) {
           if (item.querySelector('.pure-menu-link').getAttribute('href').replace(/.*#/, '') === elements[i].id) {
             item.classList.add('pure-menu-active', 'active');
@@ -63,4 +92,4 @@ document.addEventListener("DOMContentLoaded", function (event) {
     }
   });
   window.addEventListener(WINDOW_CHANGE_EVENT, closeMenu);
-});
+}

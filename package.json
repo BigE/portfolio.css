@@ -4,7 +4,7 @@
     "registry": "https://npm.pkg.github.com"
   },
   "description": "Stylesheets for my portfolio site",
-  "version": "0.0.34",
+  "version": "0.0.40",
   "license": "MIT",
   "author": {
     "name": "Eric Gach",
@@ -24,10 +24,12 @@
     "purecss": "^3.0.0"
   },
   "devDependencies": {
+    "http-server": "^14.1.1",
     "sass": "^1.91.0"
   },
   "scripts": {
     "build": "sass --style=compressed scss:css",
+    "test:serve": "http-server -p 8080",
     "watch": "sass --watch scss:css"
   }
 }
