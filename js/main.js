@@ -81,7 +81,7 @@ export function bindElements(event) {
 
     clearActive(menu_items);
     for (var i = 0; i < elements.length; i++) {
-      if (top >= (elements[i].offsetTop - 200) && elem.scrollTop > 0) {
+      if (top >= (elements[i].offsetTop - (window.innerHeight * 0.50)) && elem.scrollTop > 0) {
         menu_items.forEach(function (item, x, aa) {
           if (item.querySelector('.pure-menu-link').getAttribute('href').replace(/.*#/, '') === elements[i].id) {
             item.classList.add('pure-menu-active', 'active');
