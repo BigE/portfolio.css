@@ -39,7 +39,7 @@ export function closeMenu(className) {
  *
  * @param {HTMLLIElement[]} menu_items Menu items to check against
  */
-export function highlightNavigationOnScroll(menu_items) {
+export function highlightNavigationOnScroll(menu_items, className='active') {
     const elem = (document.scrollingElement || document.documentElement),
           top = elem.scrollTop,
           elements = Array.prototype.slice.call(document.getElementsByClassName('section')).reverse();
@@ -54,7 +54,7 @@ export function highlightNavigationOnScroll(menu_items) {
       if (top >= (elements[i].offsetTop - (window.innerHeight * 0.50)) && elem.scrollTop > 0) {
         menu_items.forEach(function (item, x, aa) {
           if (item.querySelector('.pure-menu-link').getAttribute('href').replace(/.*#/, '') === elements[i].id) {
-            item.classList.add('pure-menu-active', 'active');
+            item.classList.add('pure-menu-active', className);
           }
         });
         break;
