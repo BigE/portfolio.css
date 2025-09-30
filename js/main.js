@@ -35,6 +35,34 @@ export function closeMenu(className) {
 }
 
 /**
+ * Make the "on page" navigation turn active on scroll
+ *
+ * @param {HTMLLIElement[]} menu_items Menu items to check against
+ */
+export function highlightNavigationOnScroll(menu_items) {
+    const elem = (document.scrollingElement || document.documentElement),
+          top = elem.scrollTop,
+          elements = Array.prototype.slice.call(document.getElementsByClassName('section')).reverse();
+
+    if (elem.scrollTop > 200)
+      document.getElementById('backToTop').classList.add('visible');
+    else
+      document.getElementById('backToTop').classList.remove('visible');
+
+    clearActive(menu_items);
+    for (var i = 0; i < elements.length; i++) {
+      if (top >= (elements[i].offsetTop - (window.innerHeight * 0.50)) && elem.scrollTop > 0) {
+        menu_items.forEach(function (item, x, aa) {
+          if (item.querySelector('.pure-menu-link').getAttribute('href').replace(/.*#/, '') === elements[i].id) {
+            item.classList.add('pure-menu-active', 'active');
+          }
+        });
+        break;
+      }
+    }
+}
+
+/**
  * Toggle the visibility of the menu
  *
  * @param {string} className Class to toggle on the body
@@ -48,7 +76,6 @@ export function toggleMenu(className, menuId) {
 export function bindElements(event) {
   var body = document.body,
       menu_items = document.body.querySelectorAll('#menu .pure-menu-item'),
-      clicked = false,
       WINDOW_CHANGE_EVENT = ('onorientationchange' in window) ? 'orientationchange':'resize';
 
   document.getElementById('menuToggle').addEventListener('click', function (event) {
@@ -67,29 +94,6 @@ export function bindElements(event) {
     item.addEventListener('click', closeMenu);
   });
 
-  window.addEventListener('scroll', function () {
-    if (clicked) return;
-
-    var elem = (document.scrollingElement || document.documentElement),
-        top = elem.scrollTop,
-        elements = Array.prototype.slice.call(document.getElementsByClassName('section')).reverse();
-
-    if (elem.scrollTop > 200)
-      document.getElementById('backToTop').classList.add('visible');
-    else
-      document.getElementById('backToTop').classList.remove('visible');
-
-    clearActive(menu_items);
-    for (var i = 0; i < elements.length; i++) {
-      if (top >= (elements[i].offsetTop - (window.innerHeight * 0.50)) && elem.scrollTop > 0) {
-        menu_items.forEach(function (item, x, aa) {
-          if (item.querySelector('.pure-menu-link').getAttribute('href').replace(/.*#/, '') === elements[i].id) {
-            item.classList.add('pure-menu-active', 'active');
-          }
-        });
-        break;
-      }
-    }
-  });
+  window.addEventListener('scroll', (_event) => highlightNavigationOnScroll(menu_items));
   window.addEventListener(WINDOW_CHANGE_EVENT, closeMenu);
 }
