@@ -42,14 +42,14 @@ export function closeMenu(className) {
 export function highlightNavigationOnScroll(menu_items, className='active') {
     const elem = (document.scrollingElement || document.documentElement),
           top = elem.scrollTop,
-          elements = Array.prototype.slice.call(document.getElementsByClassName('section')).reverse();
+          elements = Array.prototype.slice.call(document.querySelectorAll('main > section[id]')).reverse();
 
     if (elem.scrollTop > 200)
       document.getElementById('backToTop').classList.add('visible');
     else
       document.getElementById('backToTop').classList.remove('visible');
 
-    clearActive(menu_items);
+    clearActive(menu_items, className);
     for (var i = 0; i < elements.length; i++) {
       if (top >= (elements[i].offsetTop - (window.innerHeight * 0.50)) && elem.scrollTop > 0) {
         menu_items.forEach(function (item, x, aa) {
@@ -67,8 +67,10 @@ export function highlightNavigationOnScroll(menu_items, className='active') {
  *
  * @param {string} className Class to toggle on the body
  * @param {string} menuId Menu identifier to toggle pure-menu-horizontal
+ * @param {number} breakpoint Breakpoint to stop toggling classes at
  */
-export function toggleMenu(className, menuId) {
+export function toggleMenu(className, menuId, breakpoint=1024) {
+  if (window.innerWidth < breakpoint) return;
   document.body.classList.toggle(className);
   document.getElementById(menuId).querySelector("ul").classList.toggle("pure-menu-horizontal");
 }
