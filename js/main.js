@@ -70,7 +70,7 @@ export function highlightNavigationOnScroll(menu_items, className='active') {
  * @param {number} breakpoint Breakpoint to stop toggling classes at
  */
 export function toggleMenu(className, menuId, breakpoint=1024) {
-  if (window.innerWidth < breakpoint) return;
+  if (window.innerWidth >= breakpoint) return;
   document.body.classList.toggle(className);
   document.getElementById(menuId).querySelector("ul").classList.toggle("pure-menu-horizontal");
 }
