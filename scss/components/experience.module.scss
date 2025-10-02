@@ -2,12 +2,10 @@
   margin: 2em 0;
 
   .header {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr auto;
 
     .company,.employment,.location,.position {
-      flex-basis: 50%;
-      flex-grow: 1;
       font-size: 1em;
       margin: 0;
     }

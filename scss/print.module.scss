@@ -1,0 +1,9 @@
+@media print {
+  .no-print, .toggle, #header, #footer {
+    display: none !important;
+  }
+
+  .break-inside-avoid {
+    break-inside: avoid;
+  }
+}

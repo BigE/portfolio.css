@@ -52,7 +52,7 @@ export function highlightNavigationOnScroll(menu_items, className='active') {
     clearActive(menu_items, className);
     for (var i = 0; i < elements.length; i++) {
       if (top >= (elements[i].offsetTop - (window.innerHeight * 0.50)) && elem.scrollTop > 0) {
-        menu_items.forEach(function (item, x, aa) {
+        menu_items.forEach(function (item) {
           if (item.querySelector('.pure-menu-link').getAttribute('href').replace(/.*#/, '') === elements[i].id) {
             item.classList.add('pure-menu-active', className);
           }
@@ -75,7 +75,7 @@ export function toggleMenu(className, menuId, breakpoint=1024) {
   document.getElementById(menuId).querySelector("ul").classList.toggle("pure-menu-horizontal");
 }
 
-export function bindElements(event) {
+export function bindElements() {
   var body = document.body,
       menu_items = document.body.querySelectorAll('#menu .pure-menu-item'),
       WINDOW_CHANGE_EVENT = ('onorientationchange' in window) ? 'orientationchange':'resize';
@@ -96,6 +96,6 @@ export function bindElements(event) {
     item.addEventListener('click', closeMenu);
   });
 
-  window.addEventListener('scroll', (_event) => highlightNavigationOnScroll(menu_items));
+  window.addEventListener('scroll', () => highlightNavigationOnScroll(menu_items));
   window.addEventListener(WINDOW_CHANGE_EVENT, closeMenu);
 }
