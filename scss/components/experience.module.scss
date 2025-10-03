@@ -1,9 +1,18 @@
+@use "../variables";
+
 .experience {
   margin: 2em 0;
 
   .header {
     display: grid;
-    grid-template-columns: 1fr auto;
+
+    @media (min-width: variables.$breakpoint_sm) {
+      grid-template-columns: 2fr 1fr;
+    }
+
+    @media (min-width: variables.$breakpoint_md) {
+      grid-template-columns: 50% 50%;
+    }
 
     .company,.employment,.location,.position {
       font-size: 1em;
