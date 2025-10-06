@@ -71,6 +71,8 @@
 
   .footer {
     display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
     justify-content: flex-end;
 
     &.centered {
@@ -79,7 +81,6 @@
 
     .button {
       border-radius: 0.5em;
-      margin: 0 0.5em;
     }
   }
 }
