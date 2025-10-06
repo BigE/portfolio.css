@@ -28,9 +28,9 @@ export function clearActive(menu_items, className='active') {
  *
  * @param {string} className
  */
-export function closeMenu(className) {
+export function closeMenu(className, menuId='menu') {
   if (document.body.classList.contains(className)) {
-    toggleMenu(className);
+    toggleMenu(className, menuId);
   }
 }
 
@@ -93,9 +93,9 @@ export function bindElements() {
   });
 
   document.getElementById('menu').querySelectorAll('.item .link').forEach(item => {
-    item.addEventListener('click', closeMenu);
+    item.addEventListener('click', () => closeMenu('header-visible'));
   });
 
   window.addEventListener('scroll', () => highlightNavigationOnScroll(menu_items));
-  window.addEventListener(WINDOW_CHANGE_EVENT, closeMenu);
+  window.addEventListener(WINDOW_CHANGE_EVENT, () => closeMenu('header-visible'));
 }
